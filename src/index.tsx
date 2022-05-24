@@ -4,11 +4,11 @@ import {
   Poppins_700Bold, useFonts
 } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+// import * as SplashScreen from 'expo-splash-screen';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from './src/global/styles/theme';
-import { Dashboard } from './src/screens/Dashboard';
-
+import theme from './global/styles/theme';
+import { Dashboard } from './screens/Dashboard';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,6 +18,9 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
+    // SplashScreen.preventAutoHideAsync();
+    // SplashScreen.hideAsync();
+    // return;
     return <AppLoading />
   }
 
